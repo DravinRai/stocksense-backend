@@ -118,7 +118,7 @@ app.get('/api/chart/:symbol', async (req, res) => {
 app.get('/api/search', async (req, res) => {
     try {
         const { q } = req.query;
-        const url = `https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(q)}&quotesCount=10&newsCount=0&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query`;
+        const url = `https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(q)}&quotesCount=10&newsCount=0`;
         const response = await axios.get(url);
         res.json(response.data);
     } catch (error) {
